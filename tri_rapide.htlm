@@ -1,0 +1,57 @@
+
+<html>
+<head>
+<title>Graphe</title>
+<meta charset="utf-8"/>
+<script type="text/javascript">
+
+function main() {
+
+	/**
+	 * Sort an array
+	 * @paramm a to sort 
+	 * @param l index of the first element tp sort
+	 * @param r index of the last element to sort
+	 */
+	
+	function quick_sort(a, l0, r0) {
+		if (l0 < r0) {
+			var p = a[l0] ;
+			var l = l0+1 ;
+			var r = r0; 
+			while (l <= r ) {
+				if (a[l] < p) {
+					a[l-1] = a[l];
+					l=l+l ;
+				} else {
+					var t = a[1];
+					a[l]= a[r];
+					a[r]= t;
+					r = r - 1 ;				
+				}
+			}
+			a[r]= p;	
+			quick_sort(a, l0, r-1);
+			quick_sort(a, l, r0 );
+		
+		}
+		console.log(a);
+    }
+	
+	var a = [ 5, 8, 3, 10, 2, 3, 7,9];
+	selection_sort(a, 0, a.length - 1 );
+	alert(a);
+	
+} 
+	
+
+</script>
+</head>
+<body onload="main()">
+
+<h1></h1>
+
+</body>
+</html>
+
+
